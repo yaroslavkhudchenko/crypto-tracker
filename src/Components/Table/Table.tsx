@@ -1,4 +1,5 @@
 import { FunctionComponent } from "react";
+import styles from "./Table.module.scss";
 
 interface Props {}
 
