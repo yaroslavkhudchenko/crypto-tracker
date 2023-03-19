@@ -14,6 +14,7 @@ export const useGetCryptosList = (
   useEffect(() => {
     fetchData();
   }, []);
+
   const fetchData = async (): Promise<void> => {
     setLoading(true);
     try {
