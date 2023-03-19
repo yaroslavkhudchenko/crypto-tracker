@@ -14,13 +14,19 @@ const Table: FunctionComponent<Props> = (): JSX.Element => {
   if (loading) return <section>Loading, please wait</section>;
   return (
     <table className="min-w-full text-left text-sm font-light">
-      <thead className="border-b font-medium dark:border-neutral-500">
+      <thead className="border-b font-medium dark:border-neutral-500 bg-neutral-800 text-neutral-50">
         <tr>
-          <th scope="col" className="px-6 py-4">
+          <th scope="col" className="text-center">
             #
           </th>
-          <th scope="col" className="px-6 py-4">
+          <th scope="col" className="px-3 py-4">
             Name
+          </th>
+          <th scope="col" className="px-3 py-4">
+            1h % change
+          </th>
+          <th scope="col" className="px-3 py-4">
+            Price
           </th>
         </tr>
       </thead>
