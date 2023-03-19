@@ -26,6 +26,7 @@ export const useGetCryptosList = (
 
       const data: singleCrypto[] = await response.json();
       setData(data);
+      setLoading(false);
     } catch (err) {
       console.log("error while fetching cryptos list");
       setError(true);

@@ -7,10 +7,18 @@ interface Props {}
 
 const Table: FunctionComponent<Props> = (): JSX.Element => {
   const { loading, data, error } = useGetCryptosList(50, 1);
+
+  if (error)
+    return <section>There is a problem. Please try again later</section>;
+
+  if (loading) return <section>Loading, please wait</section>;
   return (
     <table className="min-w-full text-left text-sm font-light">
       <thead className="border-b font-medium dark:border-neutral-500">
         <tr>
+          <th scope="col" className="px-6 py-4">
+            #
+          </th>
           <th scope="col" className="px-6 py-4">
             Name
           </th>
