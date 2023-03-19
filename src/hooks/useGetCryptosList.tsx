@@ -14,7 +14,7 @@ export const useGetCryptosList = (
     setLoading(true);
     try {
       const response: Response = await fetch(
-        `${API_BASE}/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=${howMany}&page=${howMany}&sparkline=true&price_change_percentage=1h%2C%2024h%2C%207d%2C%2014d%2C%2030d%2C%20200d%2C%201y`
+        `${API_BASE}/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=${howMany}&page=${page}&price_change_percentage=1h%2C%2024h%2C%207d%2C%2014d%2C%2030d%2C%20200d%2C%201y`
       );
 
       const data: object = await response.json();
@@ -23,12 +23,13 @@ export const useGetCryptosList = (
       console.log("error while fetching cryptos list");
       setError(true);
     }
-    console.log("object", data);
   };
 
   useEffect(() => {
     fetchData();
+    return () => {};
   }, []);
+  console.log("object", data);
 
   return {
     loading,
