@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import {
   API_BASE,
   DEFAULT_PERCENTAGE_VALUES,
-} from "../Congfigs/globalVariables";
+} from "../Configs/globalVariables";
+
 import { singleCrypto } from "../Interfaces/interfaces";
 
 export const useGetCryptosList = (
@@ -27,6 +28,7 @@ export const useGetCryptosList = (
       const data: singleCrypto[] = await response.json();
       setData(data);
       setLoading(false);
+      setError(false);
     } catch (err) {
       console.log("error while fetching cryptos list");
       setError(true);
