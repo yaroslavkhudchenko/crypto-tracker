@@ -15,6 +15,9 @@ export const useGetCryptosList = (
   const [data, setData] = useState<singleCrypto[]>([]);
 
   useEffect(() => {
+    // setInterval(() => {
+    //   fetchData();
+    // }, 30000);
     fetchData();
   }, []);
 

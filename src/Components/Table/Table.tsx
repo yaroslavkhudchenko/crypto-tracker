@@ -14,18 +14,21 @@ const Table: FunctionComponent<Props> = (): JSX.Element => {
   if (loading) return <section>Loading, please wait</section>;
   return (
     <table className="min-w-full text-left text-sm font-light">
-      <thead className="border-b font-medium dark:border-neutral-500 bg-neutral-800 text-neutral-50">
+      <thead className="border-b font-medium dark:border-neutral-500 bg-neutral-700 text-neutral-50">
         <tr>
-          <th scope="col" className="text-center">
+          <th scope="col" className="text-center border border-slate-900">
             #
           </th>
-          <th scope="col" className="px-3 py-4">
+          <th scope="col" className="px-3 py-4 border border-slate-900">
             Name
           </th>
-          <th scope="col" className="px-3 py-4">
+          <th scope="col" className="px-3 py-4 border border-slate-900">
             1h % change
           </th>
-          <th scope="col" className="px-3 py-4">
+          <th scope="col" className="px-3 py-4 border border-slate-900">
+            24h % change
+          </th>
+          <th scope="col" className="px-3 py-4 border border-slate-900">
             Price
           </th>
         </tr>
@@ -35,7 +38,7 @@ const Table: FunctionComponent<Props> = (): JSX.Element => {
           (crypto: singleCrypto, index: number): JSX.Element => (
             <SingleCrypto
               key={`${index}_${crypto?.name}`}
-              index={index}
+              index={index + 1}
               {...crypto}
             />
           )
