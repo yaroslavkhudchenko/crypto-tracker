@@ -13,6 +13,7 @@ const SingleCrypto: FunctionComponent<CryptoValues> = ({
   current_price,
   price_change_percentage_1h_in_currency,
   price_change_percentage_24h,
+  market_cap,
 }): JSX.Element => {
   return (
     <tr className="border-b dark:border-neutral-500">
@@ -21,6 +22,9 @@ const SingleCrypto: FunctionComponent<CryptoValues> = ({
       </td>
       <td className="whitespace-nowrap px-3 py-4 font-medium border border-slate-700">
         {name}
+      </td>
+      <td className="whitespace-nowrap px-3 py-4 font-medium border border-slate-700">
+        {current_price}$
       </td>
       <td
         className={`whitespace-nowrap px-3 py-4 font-medium border border-slate-700 ${
@@ -39,7 +43,7 @@ const SingleCrypto: FunctionComponent<CryptoValues> = ({
         {price_change_percentage_24h.toFixed(2)}%
       </td>
       <td className="whitespace-nowrap px-3 py-4 font-medium border border-slate-700">
-        {current_price}$
+        {new Intl.NumberFormat("en-US").format(market_cap)}$
       </td>
     </tr>
   );

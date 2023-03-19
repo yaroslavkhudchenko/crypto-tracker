@@ -23,13 +23,16 @@ const Table: FunctionComponent<Props> = (): JSX.Element => {
             Name
           </th>
           <th scope="col" className="px-3 py-4 border border-slate-900">
+            Price
+          </th>
+          <th scope="col" className="px-3 py-4 border border-slate-900">
             1h % change
           </th>
           <th scope="col" className="px-3 py-4 border border-slate-900">
             24h % change
           </th>
           <th scope="col" className="px-3 py-4 border border-slate-900">
-            Price
+            Market Cap
           </th>
         </tr>
       </thead>
