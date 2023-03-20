@@ -6,4 +6,5 @@ export interface singleCrypto {
   symbol: string;
   price_change_percentage_1h_in_currency: number;
   price_change_percentage_24h: number;
+  image: string;
 }

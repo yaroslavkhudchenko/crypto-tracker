@@ -14,20 +14,23 @@ const SingleCrypto: FunctionComponent<CryptoValues> = ({
   price_change_percentage_1h_in_currency,
   price_change_percentage_24h,
   market_cap,
+  image,
+  symbol,
 }): JSX.Element => {
   return (
     <tr className="border-b dark:border-neutral-500">
-      <td className="whitespace-nowrap text-center font-medium border border-slate-700">
-        {index}
+      <td className="whitespace-nowrap text-center font-medium">{index}</td>
+      <td className="whitespace-nowrap px-3 py-4 font-medium flex">
+        <img src={image} alt={symbol} className="w-5 h-auto mr-2" />
+        <p>
+          {name}&nbsp;{symbol}
+        </p>
       </td>
-      <td className="whitespace-nowrap px-3 py-4 font-medium border border-slate-700">
-        {name}
-      </td>
-      <td className="whitespace-nowrap px-3 py-4 font-medium border border-slate-700">
+      <td className="whitespace-nowrap px-3 py-4 font-medium">
         {current_price}$
       </td>
       <td
-        className={`whitespace-nowrap px-3 py-4 font-medium border border-slate-700 ${
+        className={`whitespace-nowrap px-3 py-4 font-medium ${
           price_change_percentage_1h_in_currency >= 0
             ? "bg-green-500"
             : "bg-red-800"
@@ -36,13 +39,13 @@ const SingleCrypto: FunctionComponent<CryptoValues> = ({
         {price_change_percentage_1h_in_currency.toFixed(2)}%
       </td>
       <td
-        className={`whitespace-nowrap px-3 py-4 font-medium border border-slate-700 ${
+        className={`whitespace-nowrap px-3 py-4 font-medium ${
           price_change_percentage_24h >= 0 ? "bg-green-500" : "bg-red-800"
         }`}
       >
         {price_change_percentage_24h.toFixed(2)}%
       </td>
-      <td className="whitespace-nowrap px-3 py-4 font-medium border border-slate-700">
+      <td className="whitespace-nowrap px-3 py-4 font-medium">
         {new Intl.NumberFormat("en-US").format(market_cap)}$
       </td>
     </tr>
