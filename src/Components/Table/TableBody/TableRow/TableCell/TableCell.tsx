@@ -7,12 +7,12 @@ interface Props {
 }
 const TableCell: FunctionComponent<Props> = ({
   children,
-  placeholder,
-  classesModified,
+  placeholder = "",
+  classesModified = "",
 }): JSX.Element => {
   return (
     <td
-      className={`whitespace-nowrap text-center font-medium ${placeholder} ${classesModified}`}
+      className={`whitespace-nowrap px-3 py-4 font-medium ${placeholder} ${classesModified}`}
     >
       {children}
     </td>

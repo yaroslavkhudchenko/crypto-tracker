@@ -22,8 +22,8 @@ const TableRow: FunctionComponent<CryptoValues> = ({
   const placeholder = loading ? "blur-md" : "";
   return (
     <tr className="border-b dark:border-neutral-500">
-      <TableCell>{index}</TableCell>
-      <TableCell>
+      <TableCell classesModified="text-center">{index}</TableCell>
+      <TableCell classesModified="flex">
         <img src={image} alt={symbol} className="w-5 h-auto mr-2" />
         <p>
           {name}&nbsp;{symbol}
